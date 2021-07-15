@@ -1,0 +1,50 @@
+{
+  "name": "testing_masterclass",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "date-fns": "^2.22.1"
+  },
+  "scripts": {
+    "test": "jest",
+    "test:no-watch": "jest --watchAll=false --forceExit --collectCoverage=false",
+    "build": "tsc",
+    "format": "prettier --write \"src/**/*.{ts,tsx,js,jsx,json,md}\"",
+    "format:check": "prettier --check \"src/**/*.{ts,tsx,js,jsx,json,md}\"",
+    "lint": "eslint --fix \"src/**/*.{ts,tsx,js,jsx}\"",
+    "lint:check": "eslint \"src/**/*.{ts,tsx,js,jsx}\""
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "post-merge": "yarn"
+    }
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,jsx}": [
+      "prettier --write",
+      "eslint --fix"
+    ]
+  },
+  "devDependencies": {
+    "@babel/core": "^7.11.6",
+    "@babel/preset-env": "^7.11.5",
+    "@babel/preset-typescript": "^7.10.4",
+    "@types/google.maps": "^3.45.6",
+    "@types/jest": "^26.0.20",
+    "@types/node": "^13.13.5",
+    "babel-jest": "^26.3.0",
+    "dotenv": "^8.2.0",
+    "eslint": "7.14.0",
+    "eslint-config-osedea": "6.2.0",
+    "husky": "4.3.0",
+    "jest": "^26.4.2",
+    "lint-staged": "10.5.2",
+    "mockdate": "^3.0.2",
+    "prettier": "2.2.0",
+    "ts-jest": "^26.4.4",
+    "ts-node": "^9.1.1",
+    "ts-node-dev": "^1.1.6",
+    "typescript": "^3.8.3"
+  }
+}

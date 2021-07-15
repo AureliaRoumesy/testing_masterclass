@@ -1,0 +1,9 @@
+extends:
+  - osedea/react
+  - osedea/typescript
+  - osedea/jest
+  - osedea/prettier # this always needs to be last
+
+parserOptions:
+  project: './tsconfig.json'
+
